@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Our Website!</h1>
+        <nav>
+            <ul>
+                <li><a href="#myaccount">My Profile</a></li>
+                <li><a href="#explore">Explore Random Pets</a></li>
+                <li><a href="#lost">Lost and Found</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Random Pet Image -->
+        <section id="random-pet">
+            <h2>Meet Our Furry Friend Of the Day!</h2>
+            <img id="petImage" src="" alt="Random Pet Image">
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: contact@example.com</p>
+            <p>Phone: 123-456-7890</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to generate a random number within a specified range
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to generate a random pet image URL
+        function getRandomPetImageUrl() {
+            // Array of pet image filenames (replace these with your actual image filenames)
+            const petImages = ['cat.jpg', 'dog.jpg', 'rabbit.jpg'];
+
+            // Choose a random image filename from the array
+            const randomImage = petImages[getRandomNumber(0, petImages.length - 1)];
+
+            // Construct the URL to the image using the '/images' path
+            return '/images/' + randomImage;
+        }
+
+        // Set the src attribute of the pet image to a random pet image URL
+        document.getElementById('petImage').src = getRandomPetImageUrl();
+    </script>
+
+</body>
+</html>

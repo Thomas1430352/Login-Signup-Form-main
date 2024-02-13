@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script>
+        // Function to validate password fields
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action="/signup" method="post" onsubmit="return validatePassword()">
+        <input placeholder="Name" name="name" type="text" required>
+        <br>
+        <input id="password" placeholder="Password" name="password" type="password" required>
+        <br>
+        <input id="confirmPassword" placeholder="Confirm Password" type="password" required>
+        <br>
+        <input class="sub" type="submit">
+    </form>
+    <a href="/">Go back to login page</a>
+</body>
+</html>
